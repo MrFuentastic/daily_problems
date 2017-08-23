@@ -5,6 +5,6 @@ fruits = [
 ]
 
 
-fruits = fruits.map {|hash| fruit = [] << hash['name'] << hash['color'] }
+fruits = fruits.map {|hash| [] << hash['name'] << hash['color'] }
 
 p fruits.to_h
