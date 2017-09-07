@@ -10,5 +10,4 @@ items = [
 
 # and calculate the total amount of words for all items of type `:book`. The result should be: 3906
 
-p items.map {|item| if item[:type] == :book
- item[:words]}
+p items.select{|item| item[:type]==:book}.map{|book| book[:words]}.reduce(0){|sum, words| sum += words}
