@@ -4,17 +4,22 @@ def find_missing_letter(string)
   all_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   test_letters = string.split('')
   missing_letters = []
-  counter = 
-  test_letters.each do |letter|
+  index = all_letters.index(string[0])
+  endex = all_letters.index(string[string.length - 1])
 
-
-
-    missing_letters << all_letters.index(letter)
+  while index < endex do
+    missing_letters << all_letters[index] if string.include?(all_letters[index]) == false
+    index += 1
   end
 
-  return missing_letters.join
+  if missing_letters.length < 1
+    return nil
+  else
+    return missing_letters.join
+  end
 end
 
 
 p find_missing_letter("opqrsuv")  #=> "t"
 p find_missing_letter("xyz")      #=> nil
+p find_missing_letter('hjz')
