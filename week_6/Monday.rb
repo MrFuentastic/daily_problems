@@ -4,4 +4,4 @@ sentence = "You can live like a king but make sure it isn't a lie."
 # The result should be:
 # ["live", "like"]
 
-p sentence.scan(/\w+/){|word| puts word if word.match(/^l&&e$/)}
+p sentence.scan(/\w+/){|word| puts word if word.match(/^l/) && word.match(/e$/) && word.length == 4}
